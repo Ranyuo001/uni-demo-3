@@ -55,12 +55,17 @@
           </navigator>
         </template>
       </CommonTitle>
+
+      <view class="content">
+        <ThemeItem v-for="item in 8"></ThemeItem>
+      </view>
     </view>
   </view>
 </template>
 
 <script lang='ts' setup>
 import { ref } from "vue"
+import ThemeItem from "@/components/theme-item.vue"
 // 引入组件
 import CommonTitle from "../../components/common-title.vue"
 
@@ -197,6 +202,11 @@ const bannerList = ref<any[]>([
     .more {
       font-size: 32rpx;
       color: #888;
+    }
+
+    .content{
+      margin-top: 30rpx;
+      padding: 0 30rpx;
     }
   }
 }
