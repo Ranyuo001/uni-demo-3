@@ -1,5 +1,5 @@
 <template>
-  <view class="homeLayout">
+  <view class="homeLayout pageBg">
     <view class="banner">
       <swiper autoplay indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff">
         <swiper-item v-for="item in bannerList">
@@ -58,6 +58,7 @@
 
       <view class="content">
         <ThemeItem v-for="item in 8"></ThemeItem>
+        <ThemeItem :isMore="true"></ThemeItem>
       </view>
     </view>
   </view>
@@ -197,7 +198,7 @@ const bannerList = ref<any[]>([
   }
 
   .theme {
-    padding-top: 50rpx;
+    padding: 50rpx 0;
 
     .more {
       font-size: 32rpx;
@@ -207,6 +208,10 @@ const bannerList = ref<any[]>([
     .content{
       margin-top: 30rpx;
       padding: 0 30rpx;
+      display: grid;
+      gap: 15rpx;
+      // bug修复：将repeat(3, 1)改为repeat(3, 1fr)
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
