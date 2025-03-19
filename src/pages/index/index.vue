@@ -128,7 +128,7 @@ const bannerList = ref<any[]>([
       justify-content: center;
 
       .text {
-        color: #28b389;
+        color: $brand-theme-color;
         font-weight: 600;
         font-size: 20rpx;
       }
@@ -164,6 +164,7 @@ const bannerList = ref<any[]>([
     padding-top: 50rpx;
 
     .date {
+      color: $brand-theme-color;
       display: flex; // 使用 flexbox 布局
       align-items: center; // 垂直居中对齐
       gap: 8rpx; // 设置文本和图标之间的间距

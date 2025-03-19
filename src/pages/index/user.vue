@@ -13,14 +13,20 @@
 
     <view class="section">
       <view class="list">
-        <userItem :iconName="iconList[0].iconName">
-          <template #name>我的下载</template>
-          <template #userItemNum>33</template>
-        </userItem>
-        <userItem :iconName="iconList[1].iconName">
-          <template #name>我的评分</template>
-          <template #userItemNum>33</template>
-        </userItem>
+        <navigator url="/pages/index/classlist">
+          <userItem :iconName="iconList[0].iconName">
+            <template #name>我的下载</template>
+            <template #userItemNum>33</template>
+          </userItem>
+        </navigator>
+        
+        <navigator url="/pages/index/classlist">
+          <userItem :iconName="iconList[1].iconName">
+            <template #name>我的评分</template>
+            <template #userItemNum>33</template>
+          </userItem>
+        </navigator>
+        
         <userItem :iconName="iconList[2].iconName">
           <template #name>联系客服</template>
           <template #userItemNum>

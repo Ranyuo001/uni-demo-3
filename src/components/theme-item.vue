@@ -1,12 +1,12 @@
 <template>
   <view class="theme-item">
-    <navigator url="" class="box" v-if="!isMore">
+    <navigator url="/pages/index/classlist" class="box" v-if="!isMore">
       <image class="pic" src="../../common/images/classify1.jpg" mode="aspectFill"></image>
       <view class="mask">美女明星</view>
       <view class="tab">3天前更新</view>
     </navigator>
 
-    <navigator url="" class="box more" v-if="isMore">
+    <navigator url="/pages/index/classify" open-type="reLaunch" class="box more" v-if="isMore">
       <image class="pic" src="../../common/images/more.jpg" mode="aspectFill"></image>
       <view class="mask">
         <up-icon name="more-dot-fill" size="34" color="#fff"></up-icon>

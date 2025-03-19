@@ -3,19 +3,35 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "uni-app",
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/index/classify",
 			"style": {
-				"navigationBarTitleText": "classify"
+				"navigationBarTitleText": "classify",
+				"navigationStyle": "custom"
 			}
 		},
 		{
 			"path": "pages/index/user",
 			"style": {
-				"navigationBarTitleText": "user"
+				"navigationBarTitleText": "user",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/classlist",
+			"style": {
+				"navigationBarTitleText": "分类列表"
+			}
+		},
+		{
+			"path": "pages/index/preview",
+			"style": {
+				"navigationBarTitleText": "预览",
+				"navigationStyle": "custom"
 			}
 		}
 	],
@@ -34,28 +50,27 @@
 		}
 	},
 	"tabBar": {
-		"color":"#9799a5",
-		"selectedColor":"#28B389",
+		"color": "#9799a5",
+		"selectedColor": "#28B389",
 		"list": [
 			{
-				"text":"推荐",
+				"text": "推荐",
 				"pagePath": "pages/index/index",
 				// 配置未选中状态下的图标路径
 				"iconPath": "static/images/tabBar/home.png",
 				"selectedIconPath": "static/images/tabBar/home-h.png"
 			},
 			{
-				"text":"分类",
+				"text": "分类",
 				"pagePath": "pages/index/classify",
 				"iconPath": "static/images/tabBar/classify.png",
 				"selectedIconPath": "static/images/tabBar/classify-h.png"
 			},
 			{
-				"text":"我的",
+				"text": "我的",
 				"pagePath": "pages/index/user",
 				"iconPath": "static/images/tabBar/user.png",
 				"selectedIconPath": "static/images/tabBar/user-h.png"
-
 			}
 		]
 	}
