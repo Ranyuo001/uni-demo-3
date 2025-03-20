@@ -35,18 +35,89 @@
       </view>
     </view>
   </view>
-  <up-popup :customStyle="popupCustomStyle" bgColor="#fff" mode="center" :show="show" @close="close" @open="open">
+  <up-popup class="up-popup" :customStyle="popupCustomStyle" bgColor="#fff" mode="bottom" :show="show" @close="close"
+    @open="open">
     <view class="infoPopup">
-      <view class="popHeader">
+      <view class="popHeader" style="display: flex;justify-content: space-between;">
         <view></view>
-        <view class="title">壁纸信息</view>
+        <view class="title" style="color:#676767;font-size: 26rpx;">壁纸信息</view>
         <view class="close">
-          <u-icon name="close" size="20" @click="close"></u-icon>
+          <u-icon name="close" size="20" @click="close" style="padding: 6rpx;"></u-icon>
         </view>
       </view>
-      <scroll-view scroll-y>
+      <scroll-view style="
+           max-height: 60vh;
+
+        " scroll-y>
         <view class="content">
-          <view class="row" v-for="item in 10">{{ item }}</view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <view class="label" style="
+              color: #a7a7a7;
+              width: 140rpx;
+              text-align: right;
+              font-size: 30rpx;
+            ">壁纸ID:</view>
+            <text class="value" selectable style="flex: 1;width: 0;">1231341411</text>
+          
+          </view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <view class="label" style="
+              color: #a7a7a7;
+              width: 140rpx;
+              text-align: right;
+              font-size: 30rpx;
+            ">分类：</view>
+            <text class="value" selectable style="flex: 1;width: 0;">明星美女</text>
+          
+          </view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <view class="label" style="
+              color: #a7a7a7;
+              width: 140rpx;
+              text-align: right;
+              font-size: 30rpx;
+            ">发布者：</view>
+            <text class="value" selectable style="flex: 1;width: 0;">咸虾米</text>
+          
+          </view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <view class="label" style="
+              color: #a7a7a7;
+              width: 140rpx;
+              text-align: right;
+              font-size: 30rpx;
+            ">评分：</view>
+            <text class="value" selectable style="flex: 1;width: 0;">5分</text>
+          
+          </view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <view class="label" style="
+              color: #a7a7a7;
+              width: 140rpx;
+              text-align: right;
+              font-size: 30rpx;
+            ">摘要：</view>
+            <text class="value" selectable style="flex: 1;width: 0;">
+              摘要文字内容填充部分，摘要文字内容填充部分，摘要文字内容填充部分，摘要文字内容填充部分。
+            </text>
+          
+          </view>
+          <view class="row" style="display: flex;padding: 16rpx 0;
+          font-size: 32rpx;line-height: 1.7em;">
+            <text class="label"  style="color: #a7a7a7;width: 140rpx;text-align: right;font-size: 30rpx;">标签：</text>
+							<view class='value tabs'>
+								<view class="tab" v-for="item in 3">标签名</view>
+							</view>
+          </view>
+          <view class="copyright">声明：本图片来用户投稿，非商业使用，用于免费学习交流，如侵犯了您的权益，您可以拷贝壁纸ID举报至平台，邮箱513894357@qq.com，管理将删除侵权壁纸，维护您的权益。
+						
+          </view>
+
         </view>
       </scroll-view>
     </view>
@@ -84,14 +155,11 @@ const maskChange = () => {
 
 //自定义样式
 const popupCustomStyle = ref({
-  width: '80%',
-  height: '80%',
   // 修改 borderRadius 属性
-  borderRadius: '30rpx 30rpx 0 0',
+  padding: '30rpx',
   backgroundColor: '#fff',
-  boxShadow: '0 4rpx 8rpx rgba(0, 0, 0, 0.1)',
-  // 修正 backdropFilter 属性的引号闭合问题
-  backdropFilter: 'blur(20rpx)'
+  borderRadius: '30rpx 30rpx 0 0',
+  overflow: 'hidden',
 })
 </script>
 
@@ -183,17 +251,38 @@ const popupCustomStyle = ref({
     }
   }
 
-  .up-popuo {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 30rpx 30rpx 0 0;
+  .up-popup {
 
+    // 添加这个深度选择器来穿透组件样式
     .infoPopup {
+      width: 100%;
 
+      .popHeader {
+        padding: 20rpx;
+
+        .close {
+          padding: 10rpx;
+          border: 1px solid black;
+        }
+      }
+
+      // scroll-view {
+      //   max-height: 60vh; // 设置固定高度
+      //   .content {
+      //     padding: 20rpx;
+      //     .row {
+      //       padding: 20rpx 0;
+      //     }
+      //   }
     }
   }
+}
 
-
+.infoPopup {
+  .popHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
