@@ -91,7 +91,10 @@
               text-align: right;
               font-size: 30rpx;
             ">评分：</view>
-            <text class="value" selectable style="flex: 1;width: 0;">5分</text>
+            <text class="value" selectable style="flex: 1;width: 0;">
+              <up-rate :count="Ratecount" v-model="Ratevalue"></up-rate>
+              <u-icon name="star-fill" size="" color="yellow"></u-icon>
+            </text>
           
           </view>
           <view class="row" style="display: flex;padding: 16rpx 0;
@@ -114,9 +117,9 @@
 								<view class="tab" v-for="item in 3">标签名</view>
 							</view>
           </view>
-          <view class="copyright">声明：本图片来用户投稿，非商业使用，用于免费学习交流，如侵犯了您的权益，您可以拷贝壁纸ID举报至平台，邮箱513894357@qq.com，管理将删除侵权壁纸，维护您的权益。
+          <!-- <view class="copyright">声明：本图片来用户投稿，非商业使用，用于免费学习交流，如侵犯了您的权益，您可以拷贝壁纸ID举报至平台，邮箱513894357@qq.com，管理将删除侵权壁纸，维护您的权益。
 						
-          </view>
+          </view> -->
 
         </view>
       </scroll-view>
@@ -129,6 +132,10 @@ import { ref } from 'vue'
 const date = ref(String(Date.now()))
 const maskState = ref(true);
 const show = ref(true);
+
+//评分选择
+const Ratecount = ref(4);  //参数设置总共有多少颗星星可选择
+const Ratevalue = ref(2);  //双向绑定初始化时默认选中的星星数量
 
 // 定义方法  
 function open() {
